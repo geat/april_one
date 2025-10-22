@@ -1,0 +1,52 @@
+{
+  "id": "001",
+  "title": "shadcn/ui Initial Setup and Configuration",
+  "status": "pending",
+  "priority": "high",
+  "tags": ["shadcn-ui", "setup", "configuration"],
+  "description": "Initialize shadcn/ui with proper configuration for Next.js 15 project",
+  "subtasks": [
+    {
+      "id": "001-1",
+      "title": "Install shadcn/ui CLI and dependencies",
+      "status": "pending",
+      "priority": "high",
+      "description": "Install required packages for shadcn/ui integration",
+      "commands": [
+        "npx shadcn@latest init",
+        "npm install @radix-ui/react-icons class-variance-authority clsx tailwind-merge lucide-react tailwindcss-animate"
+      ]
+    },
+    {
+      "id": "001-2",
+      "title": "Configure Tailwind CSS for shadcn/ui",
+      "status": "pending",
+      "priority": "high",
+      "description": "Update Tailwind CSS configuration to support shadcn/ui design tokens",
+      "files": ["tailwind.config.ts", "src/app/globals.css"]
+    },
+    {
+      "id": "001-3",
+      "title": "Set up theme system with design tokens",
+      "status": "pending",
+      "priority": "medium",
+      "description": "Implement CSS variables and theme switching for shadcn/ui",
+      "files": ["src/app/globals.css", "src/providers/index.tsx"]
+    }
+  ],
+  "dependencies": [],
+  "estimatedTime": "2 hours",
+  "deliverables": [
+    "shadcn/ui CLI configured",
+    "Tailwind CSS updated for shadcn/ui",
+    "Theme system implemented",
+    "Component structure ready"
+  ],
+  "acceptanceCriteria": [
+    "shadcn/ui CLI works with `npx shadcn@latest add button`",
+    "Theme switching works (light/dark mode)",
+    "All existing functionality preserved",
+    "No console errors related to styling"
+  ],
+  "context": "shadcn-ui"
+}

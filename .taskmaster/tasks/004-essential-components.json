@@ -1,0 +1,69 @@
+{
+  "id": "004",
+  "title": "Add Essential shadcn/ui Components",
+  "status": "pending",
+  "priority": "medium",
+  "tags": ["shadcn-ui", "components", "essential"],
+  "description": "Install and configure essential shadcn/ui components for the application",
+  "dependencies": ["001"],
+  "subtasks": [
+    {
+      "id": "004-1",
+      "title": "Add Dialog and Sheet components",
+      "status": "pending",
+      "priority": "high",
+      "description": "Install Dialog and Sheet for modals and side panels",
+      "files": ["src/components/ui/dialog.tsx", "src/components/ui/sheet.tsx"],
+      "commands": ["npx shadcn@latest add dialog", "npx shadcn@latest add sheet"]
+    },
+    {
+      "id": "004-2",
+      "title": "Add Table component",
+      "status": "pending",
+      "priority": "medium",
+      "description": "Install Table component for data display",
+      "files": ["src/components/ui/table.tsx"],
+      "commands": ["npx shadcn@latest add table"]
+    },
+    {
+      "id": "004-3",
+      "title": "Add Tabs component",
+      "status": "pending",
+      "priority": "medium",
+      "description": "Install Tabs component for content organization",
+      "files": ["src/components/ui/tabs.tsx"],
+      "commands": ["npx shadcn@latest add tabs"]
+    },
+    {
+      "id": "004-4",
+      "title": "Add Select component",
+      "status": "pending",
+      "priority": "medium",
+      "description": "Install Select component for dropdown inputs",
+      "files": ["src/components/ui/select.tsx"],
+      "commands": ["npx shadcn@latest add select"]
+    },
+    {
+      "id": "004-5",
+      "title": "Add Toast component (upgrade Sonner)",
+      "status": "pending",
+      "priority": "low",
+      "description": "Ensure proper integration of toast notifications",
+      "files": ["src/components/ui/sonner.tsx"],
+      "commands": ["npx shadcn@latest add toast"]
+    }
+  ],
+  "estimatedTime": "3 hours",
+  "deliverables": [
+    "Essential UI components available",
+    "Component documentation updated",
+    "Consistent design language"
+  ],
+  "acceptanceCriteria": [
+    "All new components import successfully",
+    "Components work with existing forms",
+    "Theming applies correctly",
+    "No console errors"
+  ],
+  "context": "shadcn-ui"
+}

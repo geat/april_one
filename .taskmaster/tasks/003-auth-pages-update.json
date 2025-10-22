@@ -1,0 +1,64 @@
+{
+  "id": "003",
+  "title": "Update Authentication Pages with New shadcn/ui Components",
+  "status": "pending",
+  "priority": "high",
+  "tags": ["shadcn-ui", "authentication", "pages"],
+  "description": "Redesign and improve authentication pages using shadcn/ui components",
+  "dependencies": ["002"],
+  "subtasks": [
+    {
+      "id": "003-1",
+      "title": "Add Card component for page layouts",
+      "status": "pending",
+      "priority": "high",
+      "description": "Install and integrate shadcn/ui Card component for auth page layouts",
+      "files": ["src/components/ui/card.tsx"],
+      "commands": ["npx shadcn@latest add card"]
+    },
+    {
+      "id": "003-2",
+      "title": "Redesign Sign In page",
+      "status": "pending",
+      "priority": "high",
+      "description": "Update signin page with new shadcn/ui components and improved UX",
+      "files": ["src/app/(routes)/(auth)/signin/page.tsx", "src/app/(routes)/(auth)/signin/form.tsx"]
+    },
+    {
+      "id": "003-3",
+      "title": "Redesign Sign Up page",
+      "status": "pending",
+      "priority": "high",
+      "description": "Update signup page with new shadcn/ui components and improved UX",
+      "files": ["src/app/(routes)/(auth)/signup/page.tsx", "src/app/(routes)/(auth)/signup/form.tsx"]
+    },
+    {
+      "id": "003-4",
+      "title": "Update custom auth components",
+      "status": "pending",
+      "priority": "medium",
+      "description": "Update custom form components to work with new shadcn/ui system",
+      "files": [
+        "src/app/(routes)/(auth)/components/input-start-icon.tsx",
+        "src/app/(routes)/(auth)/components/input-password.tsx",
+        "src/app/(routes)/(auth)/components/gender-radio-group.tsx",
+        "src/app/(routes)/(auth)/components/button-signout.tsx"
+      ]
+    }
+  ],
+  "estimatedTime": "6 hours",
+  "deliverables": [
+    "Modern authentication pages",
+    "Improved form validation UX",
+    "Responsive design",
+    "Accessible form components"
+  ],
+  "acceptanceCriteria": [
+    "Sign in/up flows work seamlessly",
+    "Form validation provides clear feedback",
+    "Mobile responsive design",
+    "Keyboard navigation works",
+    "Screen reader compatibility"
+  ],
+  "context": "shadcn-ui"
+}
