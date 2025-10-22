@@ -5,14 +5,14 @@ FROM node:20-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
-RUN apk add --no-cache libc6-compat
+RUN apk add --no-cache libc6-compat python3 make g++
 WORKDIR /app
 
 # Copy package files
 COPY package.json package-lock.json* ./
 
-# Install dependencies
-RUN npm ci --silent || npm install --silent
+# Install dependencies with rebuild for native modules
+RUN npm ci --silent && npm rebuild --silent
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -23,9 +23,13 @@ COPY . .
 # Environment variables for build
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
+ENV LIGHTNINGCSS_VERSION=1.29.1
 
 # Generate Prisma/Drizzle client (if needed)
 # RUN npm run db:generate
+
+# Rebuild native modules to ensure lightningcss binary is available
+RUN npm rebuild lightningcss
 
 # Build Next.js application
 RUN npm run build
