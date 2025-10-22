@@ -28,9 +28,6 @@ ENV LIGHTNINGCSS_VERSION=1.29.1
 # Generate Prisma/Drizzle client (if needed)
 # RUN npm run db:generate
 
-# Rebuild native modules to ensure lightningcss binary is available
-RUN npm rebuild lightningcss
-
 # Build Next.js application
 RUN npm run build
 
