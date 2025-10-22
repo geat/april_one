@@ -1,0 +1,136 @@
+# PRODUCT REQUIREMENTS DOCUMENT (PRD)
+## Website Content Management
+
+### 1. Overview
+Sistem ini bertujuan untuk menyediakan halaman website dinamis yang dapat dikelola dari backend/admin panel tanpa perlu melakukan perubahan kode. Fitur utama yang akan dibangun mencakup:
+- Halaman "Home"
+- Halaman "Contact Us"
+- Slider/Carousel pada halaman utama
+- Pengaturan global website (nama situs, logo, kontak, dll)
+
+---
+
+### 2. Objectives
+1. Membuat sistem konten website yang fleksibel dan mudah diperbarui.
+2. Menyediakan backend yang dapat menambah, mengedit, dan menghapus konten halaman serta slider.
+3. Menyediakan API atau model data yang dapat digunakan frontend untuk menampilkan data dinamis.
+
+---
+
+### 3. Core Features
+
+#### 3.1. Homepage
+- Menampilkan slider (carousel) dari data dinamis.
+- Menampilkan konten teks utama dari tabel `website_page` dengan slug `home`.
+- Menampilkan informasi tambahan (jika diperlukan) seperti highlight section.
+
+#### 3.2. Contact Us Page
+- Menampilkan informasi kontak (alamat, email, nomor telepon) dari tabel `website_setting`.
+- Menampilkan konten halaman dari `website_page` dengan slug `contact-us`.
+- (Opsional) Formulir Contact Us untuk mengirim pesan ke email admin.
+
+#### 3.3. Slider / Carousel
+- Dikelola melalui tabel `website_slider`.
+- Setiap slider berisi gambar, judul, teks, dan tombol (opsional).
+- Hanya slider dengan `is_active = TRUE` yang akan ditampilkan.
+- Urutan tampil diatur berdasarkan kolom `order_index`.
+
+#### 3.4. Website Global Settings
+- Disimpan di tabel `website_setting`.
+- Menyimpan informasi umum seperti:
+  - site_name
+  - logo_url
+  - contact_email
+  - address
+  - phone_number
+  - social_media_links (opsional)
+
+---
+
+### 4. Database Design
+
+#### Table: `website_slider`
+| Field | Type | Description |
+|--------|------|-------------|
+| id | SERIAL | Primary key |
+| title | VARCHAR(255) | Judul slider |
+| subtitle | VARCHAR(255) | (opsional) teks tambahan |
+| description | TEXT | Deskripsi tambahan |
+| image_url | VARCHAR(255) | URL gambar slider |
+| button_text | VARCHAR(100) | (opsional) teks tombol |
+| button_link | VARCHAR(255) | (opsional) tautan tombol |
+| is_active | BOOLEAN | Status aktif/tidak |
+| order_index | INT | Urutan tampilan slider |
+| created_at | TIMESTAMP |  |
+| updated_at | TIMESTAMP |  |
+
+#### Table: `website_page`
+| Field | Type | Description |
+|--------|------|-------------|
+| id | SERIAL | Primary key |
+| slug | VARCHAR(100) | Identifier unik (misal: `home`, `contact-us`, `about`) |
+| title | VARCHAR(255) | Judul halaman |
+| content | TEXT | Isi halaman (HTML/Markdown) |
+| meta_title | VARCHAR(255) | SEO title |
+| meta_description | TEXT | SEO description |
+| is_active | BOOLEAN | Status aktif/tidak |
+| created_at | TIMESTAMP |  |
+| updated_at | TIMESTAMP |  |
+
+#### Table: `website_setting`
+| Field | Type | Description |
+|--------|------|-------------|
+| id | SERIAL | Primary key |
+| key | VARCHAR(100) | Nama setting unik |
+| value | TEXT | Nilai setting |
+| description | VARCHAR(255) | Penjelasan setting |
+| created_at | TIMESTAMP |  |
+| updated_at | TIMESTAMP |  |
+
+---
+
+### 5. API / Data Access
+
+#### Endpoint / Model yang Disarankan:
+- `GET /api/website/page/:slug` → Ambil konten halaman
+- `GET /api/website/slider` → Ambil list slider aktif
+- `GET /api/website/settings` → Ambil semua pengaturan global
+- `POST /api/website/contact` → (Opsional) Kirim pesan dari form Contact Us
+
+---
+
+### 6. UI/UX Requirements
+- **Homepage**: menampilkan carousel di atas, konten teks di bawah.
+- **Contact Us**: menampilkan informasi kontak dan (opsional) form pengiriman pesan.
+- **Responsive Design**: harus tampil baik di desktop dan mobile.
+
+---
+
+### 7. Future Enhancements
+- Tambah modul editor visual untuk konten (`WYSIWYG`).
+- Tambah manajemen SEO di admin panel.
+- Tambah multi-language support.
+
+---
+
+### 8. Tech Stack Recommendation
+Bisa diimplementasikan dengan stack berikut:
+- **Backend**: Odoo / Spring Boot / Node.js (Express)
+- **Database**: PostgreSQL
+- **Frontend**: React / Vue / Odoo Website Builder
+
+---
+
+### 9. Acceptance Criteria
+✅ Halaman `Home` dan `Contact Us` dapat ditampilkan dari data database.  
+✅ Slider dapat ditambah, diubah, dihapus melalui backend.  
+✅ Konten dapat diubah tanpa memodifikasi kode frontend.  
+✅ Semua data halaman dan slider disimpan di tabel sesuai spesifikasi.  
+✅ API dapat diakses dan menampilkan data yang benar.
+
+---
+
+### 10. Version
+Document version: 1.0  
+Date: 2025-10-23  
+Author: sigit prabowo

@@ -1,0 +1,90 @@
+{
+  "header": {
+    "products": "Products",
+    "contact": "Contact",
+    "myOrders": "My Orders",
+    "admin": "Admin",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "myAccount": "My Account",
+    "signOut": "Sign Out",
+    "adminDashboard": "Admin Dashboard"
+  },
+  "footer": {
+    "about": "About",
+    "description": "Your trusted online store for quality products at competitive prices. We're committed to providing the best shopping experience.",
+    "quickLinks": "Quick Links",
+    "customerService": "Customer Service",
+    "contactInfo": "Contact Info",
+    "trackOrder": "Track Order",
+    "shoppingCart": "Shopping Cart",
+    "myAccount": "My Account",
+    "helpSupport": "Help & Support",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "allRightsReserved": "All rights reserved"
+  },
+  "home": {
+    "title": "Welcome to Our Store",
+    "qualityProducts": "Quality Products",
+    "qualityDesc": "Curated selection of premium items",
+    "fastDelivery": "Fast Delivery",
+    "fastDeliveryDesc": "Quick and reliable shipping",
+    "securePayment": "Secure Payment",
+    "securePaymentDesc": "Your transactions are protected",
+    "support247": "24/7 Support",
+    "support247Desc": "We're here to help anytime",
+    "startShopping": "Start Shopping Today",
+    "startShoppingDesc": "Discover amazing products at great prices",
+    "browseProducts": "Browse Products"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "sendMessage": "Send us a message",
+    "formDesc": "Fill out the form below and we'll get back to you shortly",
+    "name": "Name",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "required": "Required",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message"
+  },
+  "products": {
+    "title": "Products",
+    "search": "Search products...",
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "inStock": "in stock",
+    "quantity": "Quantity",
+    "description": "Description",
+    "backToProducts": "Back to Products"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue Shopping",
+    "checkout": "Checkout",
+    "total": "Total",
+    "remove": "Remove"
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "create": "Create",
+    "update": "Update",
+    "search": "Search",
+    "actions": "Actions",
+    "yes": "Yes",
+    "no": "No",
+    "back": "Back"
+  }
+}

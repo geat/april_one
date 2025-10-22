@@ -1,0 +1,90 @@
+{
+  "header": {
+    "products": "Produk",
+    "contact": "Kontak",
+    "myOrders": "Pesanan Saya",
+    "admin": "Admin",
+    "signIn": "Masuk",
+    "signUp": "Daftar",
+    "myAccount": "Akun Saya",
+    "signOut": "Keluar",
+    "adminDashboard": "Dashboard Admin"
+  },
+  "footer": {
+    "about": "Tentang",
+    "description": "Toko online terpercaya untuk produk berkualitas dengan harga kompetitif. Kami berkomitmen memberikan pengalaman berbelanja terbaik.",
+    "quickLinks": "Tautan Cepat",
+    "customerService": "Layanan Pelanggan",
+    "contactInfo": "Info Kontak",
+    "trackOrder": "Lacak Pesanan",
+    "shoppingCart": "Keranjang Belanja",
+    "myAccount": "Akun Saya",
+    "helpSupport": "Bantuan & Dukungan",
+    "terms": "Syarat & Ketentuan",
+    "privacy": "Kebijakan Privasi",
+    "allRightsReserved": "Hak cipta dilindungi"
+  },
+  "home": {
+    "title": "Selamat Datang di Toko Kami",
+    "qualityProducts": "Produk Berkualitas",
+    "qualityDesc": "Pilihan produk premium yang dikurasi",
+    "fastDelivery": "Pengiriman Cepat",
+    "fastDeliveryDesc": "Pengiriman cepat dan terpercaya",
+    "securePayment": "Pembayaran Aman",
+    "securePaymentDesc": "Transaksi Anda terlindungi",
+    "support247": "Dukungan 24/7",
+    "support247Desc": "Kami siap membantu kapan saja",
+    "startShopping": "Mulai Belanja Sekarang",
+    "startShoppingDesc": "Temukan produk menakjubkan dengan harga terbaik",
+    "browseProducts": "Lihat Produk"
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "subtitle": "Punya pertanyaan? Kami ingin mendengar dari Anda. Kirim pesan dan kami akan merespons secepat mungkin.",
+    "email": "Email",
+    "phone": "Telepon",
+    "address": "Alamat",
+    "sendMessage": "Kirim pesan",
+    "formDesc": "Isi formulir di bawah ini dan kami akan menghubungi Anda kembali",
+    "name": "Nama",
+    "subject": "Subjek",
+    "message": "Pesan",
+    "send": "Kirim Pesan",
+    "sending": "Mengirim...",
+    "required": "Wajib diisi",
+    "success": "Pesan berhasil dikirim!",
+    "error": "Gagal mengirim pesan"
+  },
+  "products": {
+    "title": "Produk",
+    "search": "Cari produk...",
+    "addToCart": "Tambah ke Keranjang",
+    "outOfStock": "Stok Habis",
+    "inStock": "tersedia",
+    "quantity": "Jumlah",
+    "description": "Deskripsi",
+    "backToProducts": "Kembali ke Produk"
+  },
+  "cart": {
+    "title": "Keranjang Belanja",
+    "empty": "Keranjang Anda kosong",
+    "continueShopping": "Lanjut Belanja",
+    "checkout": "Checkout",
+    "total": "Total",
+    "remove": "Hapus"
+  },
+  "common": {
+    "loading": "Memuat...",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "edit": "Edit",
+    "delete": "Hapus",
+    "create": "Buat",
+    "update": "Perbarui",
+    "search": "Cari",
+    "actions": "Aksi",
+    "yes": "Ya",
+    "no": "Tidak",
+    "back": "Kembali"
+  }
+}

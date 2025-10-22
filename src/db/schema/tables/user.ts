@@ -11,6 +11,10 @@ export const user = pgTable("user", {
   image: text("image"),
   role: role("role").default("member").notNull(),
   gender: genderEnum("gender"),
+  phone: text("phone"),
+  address: text("address"),
+  city: text("city"),
+  postalCode: text("postal_code"),
   createdAt: timestamp("createdAt").defaultNow(),
   updatedAt: timestamp("updatedAt")
     .defaultNow()

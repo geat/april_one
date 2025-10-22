@@ -13,9 +13,23 @@
       "Bash(npx shadcn@latest add:*)",
       "Bash(npm run build)",
       "Bash(npm run dev:*)",
-      "Bash(git check-ignore:*)"
+      "Bash(git check-ignore:*)",
+      "Bash(npm run lint)",
+      "Bash(npx tsc:*)",
+      "Bash(/dev/null)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(powershell:*)",
+      "Bash(wmic process where \"ExecutablePath like '%node%'\" /format:table:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm info:*)",
+      "Bash(npm run db:generate:*)",
+      "Bash(timeout:*)"
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "outputStyle": "Explanatory",
+  "spinnerTipsEnabled": true
 }
