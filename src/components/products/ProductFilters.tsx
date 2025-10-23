@@ -3,7 +3,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
-import { Filter, X } from "lucide-react";
 import { useState } from "react";
 
 interface Category {
@@ -37,14 +36,6 @@ export function ProductFilters({
   const applyPriceFilter = () => {
     onPriceRangeChange?.(localPriceRange);
   };
-
-  const resetFilters = () => {
-    onCategoryChange(null);
-    setLocalPriceRange([0, maxPrice]);
-    onPriceRangeChange?.([0, maxPrice]);
-  };
-
-  const hasActiveFilters = selectedCategory !== null || localPriceRange[0] > 0 || localPriceRange[1] < maxPrice;
 
   return (
     <div className="space-y-6">

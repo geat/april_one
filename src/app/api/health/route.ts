@@ -11,10 +11,10 @@ export async function GET() {
       },
       { status: 200 }
     );
-  } catch (error) {
+  } catch {
     return NextResponse.json(
-      { 
-        status: 'error', 
+      {
+        status: 'error',
         message: 'Health check failed',
         timestamp: new Date().toISOString()
       },

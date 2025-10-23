@@ -7,7 +7,7 @@ import { ProductFilters } from "@/components/products/ProductFilters";
 import { ProductSort, SortOption } from "@/components/products/ProductSort";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight, LayoutGrid, Loader2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 
 interface Product {
   id: string;

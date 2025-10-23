@@ -5,10 +5,10 @@ import { existsSync } from "fs";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { filename: string } }
+  context: { params: Promise<{ filename: string }> }
 ) {
   try {
-    const { filename } = params;
+    const { filename } = await context.params;
 
     // Security: Prevent directory traversal
     if (filename.includes("..") || filename.includes("/") || filename.includes("\\")) {
