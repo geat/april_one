@@ -1,14 +1,41 @@
 #!/bin/sh
-set -e
 
+echo "================================================"
 echo "Starting application deployment..."
+echo "================================================"
 
-# Wait for database to be ready (useful for Railway)
-echo "Checking database connection..."
-npx drizzle-kit push --force || echo "Database push failed, continuing..."
+# Check required environment variables
+if [ -z "$DATABASE_URL" ]; then
+  echo "ERROR: DATABASE_URL is not set!"
+  exit 1
+fi
 
+echo "Environment check passed ✓"
+echo "NODE_ENV: ${NODE_ENV:-not set}"
+echo "DATABASE_URL: ${DATABASE_URL:0:30}... (truncated)"
+
+# Run database migrations
+echo ""
+echo "Running database migrations..."
+if npx drizzle-kit push --force; then
+  echo "✓ Database migrations completed successfully"
+else
+  echo "WARNING: Database migrations failed (this may be normal if already applied)"
+fi
+
+# Run database seed
+echo ""
 echo "Running database seed..."
-npm run db:seed || echo "Seed script failed or already executed, continuing..."
+if npm run db:seed; then
+  echo "✓ Database seed completed successfully"
+else
+  echo "WARNING: Database seed failed (this may be normal if already seeded)"
+fi
 
-echo "Starting Next.js application..."
+echo ""
+echo "================================================"
+echo "Starting Next.js server on port 3000..."
+echo "================================================"
+
+# Start the Next.js server
 exec node server.js
