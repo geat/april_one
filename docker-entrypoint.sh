@@ -17,19 +17,26 @@ echo "DATABASE_URL: ${DATABASE_URL:0:30}... (truncated)"
 # Run database migrations
 echo ""
 echo "Running database migrations..."
-if npx drizzle-kit push --force; then
-  echo "✓ Database migrations completed successfully"
+echo "Using drizzle-kit push for production deployment..."
+if npx drizzle-kit push --force --verbose 2>&1; then
+  echo "✓ Database schema synchronized successfully"
 else
-  echo "WARNING: Database migrations failed (this may be normal if already applied)"
+  EXIT_CODE=$?
+  echo "⚠️  Database sync exited with code $EXIT_CODE"
+  echo "This may be normal if schema is already up to date"
+  echo "Continuing with startup..."
 fi
 
 # Run database seed
 echo ""
 echo "Running database seed..."
-if npm run db:seed; then
+if npm run db:seed 2>&1; then
   echo "✓ Database seed completed successfully"
 else
-  echo "WARNING: Database seed failed (this may be normal if already seeded)"
+  EXIT_CODE=$?
+  echo "⚠️  Database seed exited with code $EXIT_CODE"
+  echo "This may be normal if database is already seeded"
+  echo "Continuing with startup..."
 fi
 
 echo ""
