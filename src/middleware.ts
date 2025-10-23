@@ -13,13 +13,23 @@ export async function middleware(request: NextRequest) {
 
   const isApiAuth = request.nextUrl.pathname.startsWith(apiAuthPrefix);
 
-  const isPublicRoute = publicRoutes.includes(request.nextUrl.pathname);
+  // Allow public API routes
+  const isPublicApiRoute = request.nextUrl.pathname.startsWith("/api/website") ||
+                          request.nextUrl.pathname.startsWith("/api/products");
+
+  const isPublicRoute = publicRoutes.includes(request.nextUrl.pathname) ||
+                        publicRoutes.some((route) => request.nextUrl.pathname.startsWith(route));
 
   const isAuthRoute = () => {
     return authRoutes.some((path) => request.nextUrl.pathname.startsWith(path));
   };
 
   if (isApiAuth) {
+    return NextResponse.next();
+  }
+
+  // Allow public API routes without authentication
+  if (isPublicApiRoute) {
     return NextResponse.next();
   }
 
@@ -33,7 +43,7 @@ export async function middleware(request: NextRequest) {
   }
 
   if (!session && !isPublicRoute) {
-    return NextResponse.redirect(new URL("/login", request.url));
+    return NextResponse.redirect(new URL("/signin", request.url));
   }
 
   return NextResponse.next();

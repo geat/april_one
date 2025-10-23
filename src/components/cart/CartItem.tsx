@@ -59,7 +59,7 @@ export function CartItem({
             <h3 className="font-semibold text-lg truncate">{product.name}</h3>
           </Link>
           <p className="text-xl font-bold text-primary mt-1">
-            ${product.price}
+            Rp {parseFloat(product.price).toLocaleString('id-ID')}
           </p>
           <p className="text-sm text-muted-foreground mt-1">
             {product.stock > 0 ? `${product.stock} in stock` : "Out of stock"}
@@ -90,7 +90,7 @@ export function CartItem({
             </Button>
           </div>
 
-          <p className="text-lg font-bold">${subtotal}</p>
+          <p className="text-lg font-bold">Rp {parseFloat(subtotal).toLocaleString('id-ID')}</p>
 
           <Button
             variant="ghost"

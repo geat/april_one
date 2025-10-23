@@ -22,8 +22,8 @@ export function CartSummary({ items }: CartSummaryProps) {
     return acc + parseFloat(item.product.price) * item.quantity;
   }, 0);
 
-  const tax = subtotal * 0.1; // 10% tax
-  const shipping = subtotal > 100 ? 0 : 10; // Free shipping over $100
+  const tax = subtotal * 0.11; // 11% tax (PPN)
+  const shipping = subtotal > 150000 ? 0 : 15000; // Free shipping over Rp 150.000
   const total = subtotal + tax + shipping;
 
   return (
@@ -35,22 +35,22 @@ export function CartSummary({ items }: CartSummaryProps) {
         <div className="space-y-2">
           <div className="flex justify-between">
             <span className="text-muted-foreground">Subtotal</span>
-            <span className="font-semibold">${subtotal.toFixed(2)}</span>
+            <span className="font-semibold">Rp {subtotal.toLocaleString('id-ID')}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">Shipping</span>
             <span className="font-semibold">
-              {shipping === 0 ? "FREE" : `$${shipping.toFixed(2)}`}
+              {shipping === 0 ? "GRATIS" : `Rp ${shipping.toLocaleString('id-ID')}`}
             </span>
           </div>
           <div className="flex justify-between">
             <span className="text-muted-foreground">Tax (10%)</span>
-            <span className="font-semibold">${tax.toFixed(2)}</span>
+            <span className="font-semibold">Rp {tax.toLocaleString('id-ID')}</span>
           </div>
           <Separator />
           <div className="flex justify-between text-lg">
             <span className="font-bold">Total</span>
-            <span className="font-bold text-primary">${total.toFixed(2)}</span>
+            <span className="font-bold text-primary">Rp {total.toLocaleString('id-ID')}</span>
           </div>
         </div>
 
@@ -66,7 +66,7 @@ export function CartSummary({ items }: CartSummaryProps) {
 
         {subtotal < 100 && subtotal > 0 && (
           <p className="text-sm text-muted-foreground text-center">
-            Add ${(100 - subtotal).toFixed(2)} more for free shipping!
+            Tambah Rp {(150000 - subtotal).toLocaleString('id-ID')} lagi untuk gratis ongkir!
           </p>
         )}
       </CardContent>

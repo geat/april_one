@@ -11,6 +11,11 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
+  trustedOrigins: [
+    process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
+    "https://aprilone-production.up.railway.app",
+  ],
   user: {
     additionalFields: {
       gender: {

@@ -201,7 +201,7 @@ export default function AdminProductsPage() {
                         <span className="text-muted-foreground">-</span>
                       )}
                     </TableCell>
-                    <TableCell>${product.price}</TableCell>
+                    <TableCell>Rp {parseFloat(product.price).toLocaleString('id-ID')}</TableCell>
                     <TableCell>
                       <span
                         className={

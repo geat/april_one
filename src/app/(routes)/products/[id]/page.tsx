@@ -154,7 +154,7 @@ export default function ProductDetailPage() {
             <Badge variant="secondary">{product.category.name}</Badge>
           )}
           <h1 className="text-4xl font-bold">{product.name}</h1>
-          <p className="text-3xl font-bold text-primary">${product.price}</p>
+          <p className="text-3xl font-bold text-primary">Rp {parseFloat(product.price).toLocaleString('id-ID')}</p>
 
           <div>
             <p className="text-sm text-muted-foreground">

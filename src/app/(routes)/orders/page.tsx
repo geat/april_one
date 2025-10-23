@@ -110,7 +110,7 @@ export default function OrdersPage() {
                     })}
                   </p>
                   <p className="text-lg font-bold text-primary">
-                    ${parseFloat(order.totalAmount).toFixed(2)}
+                    Rp {parseFloat(order.totalAmount).toLocaleString('id-ID')}
                   </p>
                 </div>
 

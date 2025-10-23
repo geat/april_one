@@ -148,7 +148,7 @@ export default function AdminOrdersPage() {
                     </div>
                   </TableCell>
                   <TableCell className="font-semibold">
-                    ${parseFloat(order.totalAmount).toFixed(2)}
+                    Rp {parseFloat(order.totalAmount).toLocaleString('id-ID')}
                   </TableCell>
                   <TableCell>
                     <Select
@@ -222,7 +222,7 @@ export default function AdminOrdersPage() {
                             <div>
                               <h4 className="font-semibold mb-2">Total</h4>
                               <p className="text-2xl font-bold text-primary">
-                                $
+                                Rp
                                 {parseFloat(
                                   selectedOrder.totalAmount
                                 ).toFixed(2)}

@@ -168,12 +168,12 @@ export default function OrderDetailPage() {
                       Quantity: {item.quantity}
                     </p>
                     <p className="text-sm font-semibold mt-1">
-                      ${parseFloat(item.price).toFixed(2)} each
+                      Rp {parseFloat(item.price).toLocaleString('id-ID')} each
                     </p>
                   </div>
                   <div className="text-right">
                     <p className="font-bold">
-                      ${(parseFloat(item.price) * item.quantity).toFixed(2)}
+                      Rp {(parseFloat(item.price) * item.quantity).toLocaleString('id-ID')}
                     </p>
                   </div>
                 </div>
@@ -187,7 +187,7 @@ export default function OrderDetailPage() {
               <div className="flex justify-between text-lg">
                 <span className="font-bold">Total</span>
                 <span className="font-bold text-primary">
-                  ${parseFloat(order.totalAmount).toFixed(2)}
+                  Rp {parseFloat(order.totalAmount).toLocaleString('id-ID')}
                 </span>
               </div>
             </div>
