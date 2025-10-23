@@ -39,8 +39,8 @@ export async function POST(request: NextRequest) {
       const filepath = join(uploadDir, filename);
       await writeFile(filepath, buffer);
 
-      // Return URL relative to public directory
-      uploadedUrls.push(`/uploads/${filename}`);
+      // Return URL to API endpoint that serves the file
+      uploadedUrls.push(`/api/uploads/${filename}`);
     }
 
     return NextResponse.json({

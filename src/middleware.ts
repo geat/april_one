@@ -15,7 +15,8 @@ export async function middleware(request: NextRequest) {
 
   // Allow public API routes
   const isPublicApiRoute = request.nextUrl.pathname.startsWith("/api/website") ||
-                          request.nextUrl.pathname.startsWith("/api/products");
+                          request.nextUrl.pathname.startsWith("/api/products") ||
+                          request.nextUrl.pathname.startsWith("/api/uploads");
 
   const isPublicRoute = publicRoutes.includes(request.nextUrl.pathname) ||
                         publicRoutes.some((route) => request.nextUrl.pathname.startsWith(route));
