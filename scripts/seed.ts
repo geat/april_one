@@ -3,6 +3,7 @@ import { db } from "../src/db";
 import { category, product, user, account } from "../src/db/schema";
 import { nanoid } from "nanoid";
 import { sql } from "drizzle-orm";
+import { auth } from "../src/lib/auth/server";
 
 async function seed() {
   console.log("🌱 Seeding database...");
@@ -16,34 +17,36 @@ async function seed() {
       return;
     }
 
-    // Create admin user with password
+    // First, clean up any existing users with broken password hashes
+    console.log("Cleaning up any existing users...");
+    await db.delete(user);
+    await db.delete(account);
+    console.log("✓ Cleaned up existing users");
+
+    // Create admin user using Better Auth API
     console.log("Creating admin user...");
-    const bcrypt = await import("bcrypt");
-    const hashedPassword = await bcrypt.hash("admin123", 10);
 
-    const userId = nanoid();
-
-    // Insert user first
-    await db.insert(user).values({
-      id: userId,
-      name: "Admin",
-      username: "admin",
-      displayUsername: "admin",
-      email: "admin@example.com",
-      emailVerified: true,
-      role: "admin",
+    const adminUser = await auth.api.signUpEmail({
+      body: {
+        email: "admin@example.com",
+        password: "admin123",
+        name: "admin",
+        username: "admin",
+        gender: "other"
+      }
     });
 
-    // Insert account with password (Better Auth uses credential provider)
-    await db.insert(account).values({
-      id: nanoid(),
-      accountId: userId,
-      providerId: "credential",
-      userId: userId,
-      password: hashedPassword,
-    });
+    if (!adminUser.user) {
+      throw new Error("Failed to create admin user");
+    }
 
-    console.log(`✓ Created admin user (email: admin@example.com, password: admin123)`);
+    // Update the user role to admin (can't be set during signup due to input: false)
+    await db
+      .update(user)
+      .set({ role: "admin" })
+      .where(sql`${user.id} = ${adminUser.user.id}`);
+
+    console.log(`✓ Created admin user (email: admin@example.com, password: admin123, role: admin)`);
 
     // Create categories
     console.log("Creating categories...");
