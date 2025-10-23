@@ -1,0 +1,393 @@
+2025-10-23T01:05:08.684929361Z [inf]  
+2025-10-23T01:05:13.313465009Z [inf]  [35m[Region: asia-southeast1][0m
+2025-10-23T01:05:13.356611808Z [inf]  
+2025-10-23T01:05:13.356664652Z [inf]  [38;2;125;86;243m╭────────────────╮[0m
+2025-10-23T01:05:13.356669953Z [inf]  [38;2;125;86;243m│[0m Railpack 0.9.2 [38;2;125;86;243m│[0m
+2025-10-23T01:05:13.356673455Z [inf]  [38;2;125;86;243m╰────────────────╯[0m
+2025-10-23T01:05:13.356679678Z [inf]  
+2025-10-23T01:05:13.356684068Z [inf]  [97m↳ Detected Node[0m
+2025-10-23T01:05:13.356687751Z [inf]  [97m↳ Using bun package manager[0m
+2025-10-23T01:05:13.356691125Z [inf]  
+2025-10-23T01:05:13.356694465Z [inf]  [1mPackages[0m
+2025-10-23T01:05:13.356697692Z [inf]  [38;5;238m──────────[0m
+2025-10-23T01:05:13.356701709Z [inf]  [95mbun[0m  [38;5;238m│[0m  [96m1.3.1[0m  [38;5;238m│[0m  railpack default (latest)
+2025-10-23T01:05:13.356705386Z [inf]  
+2025-10-23T01:05:13.356708190Z [inf]  [1mSteps[0m
+2025-10-23T01:05:13.356711358Z [inf]  [38;5;238m──────────[0m
+2025-10-23T01:05:13.356714718Z [inf]  [95m▸ install[0m
+2025-10-23T01:05:13.356718010Z [inf]  [38;5;245m$[0m [1mbun install --frozen-lockfile[0m
+2025-10-23T01:05:13.356721049Z [inf]  
+2025-10-23T01:05:13.356724453Z [inf]  [95m▸ build[0m
+2025-10-23T01:05:13.356727683Z [inf]  [38;5;245m$[0m [1mbun install && bun run db:migrate && bun run db:seed && bun run build[0m
+2025-10-23T01:05:13.356730517Z [inf]  
+2025-10-23T01:05:13.356733290Z [inf]  [1mDeploy[0m
+2025-10-23T01:05:13.356736513Z [inf]  [38;5;238m──────────[0m
+2025-10-23T01:05:13.356739271Z [inf]  [38;5;245m$[0m [1mbun run start[0m
+2025-10-23T01:05:13.356743110Z [inf]  
+2025-10-23T01:05:13.356747065Z [inf]  
+2025-10-23T01:05:13.358336463Z [inf]  Successfully prepared Railpack plan for build
+2025-10-23T01:05:13.358369317Z [inf]  
+2025-10-23T01:05:13.358373548Z [inf]  
+2025-10-23T01:05:13.358900413Z [inf]  context: 9j0n-PmF0
+2025-10-23T01:05:14.079107490Z [inf]  [internal] load build definition from railpack-plan.json
+2025-10-23T01:05:14.079182063Z [inf]  [internal] load build definition from railpack-plan.json
+2025-10-23T01:05:14.079204694Z [inf]  [internal] load build definition from railpack-plan.json
+2025-10-23T01:05:14.079222307Z [inf]  [internal] load build definition from railpack-plan.json
+2025-10-23T01:05:14.100668435Z [inf]  [internal] load build definition from railpack-plan.json
+2025-10-23T01:05:14.104557649Z [inf]  resolve image config for docker-image://ghcr.io/railwayapp/railpack-frontend:v0.9.2
+2025-10-23T01:05:14.372536746Z [inf]  resolve image config for docker-image://ghcr.io/railwayapp/railpack-frontend:v0.9.2
+2025-10-23T01:05:15.102707105Z [inf]  load build definition from railpack-plan.json
+2025-10-23T01:05:15.102782577Z [inf]  load build definition from railpack-plan.json
+2025-10-23T01:05:15.102800474Z [inf]  load build definition from railpack-plan.json
+2025-10-23T01:05:16.725795889Z [inf]  load build definition from railpack-plan.json
+2025-10-23T01:05:20.598915440Z [inf]  copy /root/.cache
+2025-10-23T01:05:20.599021528Z [inf]  [railpack] secrets hash
+2025-10-23T01:05:20.599040683Z [inf]  copy /root/.local/state/mise
+2025-10-23T01:05:20.599056383Z [inf]  copy / /app
+2025-10-23T01:05:20.599080214Z [inf]  copy package.json
+2025-10-23T01:05:20.599088626Z [inf]  copy /app
+2025-10-23T01:05:20.599095142Z [inf]  [railpack] copy secrets hash
+2025-10-23T01:05:20.599102046Z [inf]  loading .
+2025-10-23T01:05:20.599108543Z [inf]  copy /usr/local/bin/mise
+2025-10-23T01:05:20.599116362Z [inf]  [railpack] loading secrets
+2025-10-23T01:05:20.599125896Z [inf]  [railpack] hash used secrets
+2025-10-23T01:05:20.599131979Z [inf]  copy bun.lock
+2025-10-23T01:05:20.599138186Z [inf]  copy /app
+2025-10-23T01:05:20.599143903Z [inf]  [railpack] copy used secrets hash
+2025-10-23T01:05:20.599149402Z [inf]  copy /mise/shims
+2025-10-23T01:05:20.599160242Z [inf]  bun install --frozen-lockfile
+2025-10-23T01:05:20.599166098Z [inf]  copy /app/node_modules
+2025-10-23T01:05:20.599176198Z [inf]  bun install && bun run db:migrate && bun run db:seed && bun run build
+2025-10-23T01:05:20.599182300Z [inf]  copy .
+2025-10-23T01:05:20.599188707Z [inf]  copy /etc/mise/config.toml
+2025-10-23T01:05:20.599195014Z [inf]  copy /mise/installs
+2025-10-23T01:05:20.599201297Z [inf]  mkdir -p /app/node_modules/.cache
+2025-10-23T01:05:20.599240004Z [inf]  [railpack] secrets hash
+2025-10-23T01:05:20.599259946Z [inf]  loading .
+2025-10-23T01:05:20.599414287Z [inf]  [railpack] loading secrets
+2025-10-23T01:05:20.600153047Z [inf]  docker-image://ghcr.io/railwayapp/railpack-builder:latest
+2025-10-23T01:05:20.600193252Z [inf]  install apt packages: nodejs
+2025-10-23T01:05:20.782388131Z [inf]  Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+
+2025-10-23T01:05:20.794834896Z [inf]  Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+
+2025-10-23T01:05:20.794989307Z [inf]  Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+
+2025-10-23T01:05:20.865962382Z [inf]  Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8791 kB]
+
+2025-10-23T01:05:20.934861138Z [inf]  Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+
+2025-10-23T01:05:20.977373839Z [inf]  Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [283 kB]
+
+2025-10-23T01:05:21.357268590Z [inf]  loading .
+2025-10-23T01:05:21.357331121Z [inf]  [railpack] secrets hash
+2025-10-23T01:05:21.375976646Z [inf]  [railpack] secrets hash
+2025-10-23T01:05:21.380518697Z [inf]  [railpack] loading secrets
+2025-10-23T01:05:21.380591503Z [inf]  [railpack] copy secrets hash
+2025-10-23T01:05:21.405770727Z [inf]  loading .
+2025-10-23T01:05:21.421797401Z [inf]  [railpack] copy secrets hash
+2025-10-23T01:05:21.424371518Z [inf]  [railpack] hash used secrets
+2025-10-23T01:05:21.541192811Z [inf]  [railpack] hash used secrets
+2025-10-23T01:05:21.552834543Z [inf]  [railpack] copy used secrets hash
+2025-10-23T01:05:21.881022668Z [inf]  Fetched 9336 kB in 1s (8372 kB/s)
+Reading package lists...
+2025-10-23T01:05:22.429764241Z [inf]  
+
+2025-10-23T01:05:22.453926333Z [inf]  Reading package lists...
+2025-10-23T01:05:23.017321387Z [inf]  
+
+2025-10-23T01:05:23.036175375Z [inf]  Building dependency tree...
+2025-10-23T01:05:23.230262036Z [inf]  
+Reading state information...
+2025-10-23T01:05:23.231257148Z [inf]  
+
+2025-10-23T01:05:23.491902521Z [inf]  The following additional packages will be installed:
+
+2025-10-23T01:05:23.493242777Z [inf]    libc-ares2 libnode108 node-acorn node-busboy node-cjs-module-lexer
+
+2025-10-23T01:05:23.494011534Z [inf]    node-undici node-xtend nodejs-doc
+
+2025-10-23T01:05:23.497770499Z [inf]  Suggested packages:
+  npm
+
+2025-10-23T01:05:23.558163021Z [inf]  The following NEW packages will be installed:
+
+2025-10-23T01:05:23.559125618Z [inf]    libc-ares2 libnode108 node-acorn node-busboy node-cjs-module-lexer
+
+2025-10-23T01:05:23.559614256Z [inf]    node-undici node-xtend nodejs nodejs-doc
+
+2025-10-23T01:05:23.587229766Z [inf]  0 upgraded, 9 newly installed, 0 to remove and 117 not upgraded.
+Need to get 15.1 MB of archives.
+After this operation, 70.0 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian bookworm/main amd64 libc-ares2 amd64 1.18.1-3 [102 kB]
+
+2025-10-23T01:05:23.594115416Z [inf]  Get:2 http://deb.debian.org/debian bookworm/main amd64 node-xtend all 4.0.2-3 [3932 B]
+
+2025-10-23T01:05:23.594876465Z [inf]  Get:3 http://deb.debian.org/debian bookworm/main amd64 nodejs amd64 18.20.4+dfsg-1~deb12u1 [319 kB]
+
+2025-10-23T01:05:23.598587344Z [inf]  Get:4 http://deb.debian.org/debian bookworm/main amd64 node-acorn all 8.8.1+ds+~cs25.17.7-2 [128 kB]
+
+2025-10-23T01:05:23.599985014Z [inf]  Get:5 http://deb.debian.org/debian bookworm/main amd64 node-cjs-module-lexer all 1.2.2+dfsg-5 [30.1 kB]
+
+2025-10-23T01:05:23.600516481Z [inf]  Get:6 http://deb.debian.org/debian bookworm/main amd64 node-busboy all 1.6.0+~cs2.6.0-2 [16.9 kB]
+
+2025-10-23T01:05:23.601639602Z [inf]  Get:7 http://deb.debian.org/debian bookworm/main amd64 node-undici all 5.15.0+dfsg1+~cs20.10.9.3-1+deb12u4 [285 kB]
+
+2025-10-23T01:05:23.605817774Z [inf]  Get:8 http://deb.debian.org/debian bookworm/main amd64 libnode108 amd64 18.20.4+dfsg-1~deb12u1 [10.6 MB]
+
+2025-10-23T01:05:23.679881213Z [inf]  Get:9 http://deb.debian.org/debian bookworm/main amd64 nodejs-doc all 18.20.4+dfsg-1~deb12u1 [3579 kB]
+
+2025-10-23T01:05:23.888097976Z [inf]  debconf: delaying package configuration, since apt-utils is not installed
+
+2025-10-23T01:05:23.926418502Z [inf]  Fetched 15.1 MB in 0s (114 MB/s)
+
+2025-10-23T01:05:23.94988805Z [inf]  Selecting previously unselected package libc-ares2:amd64.
+(Reading database ... 
+2025-10-23T01:05:23.953237072Z [inf]  (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+2025-10-23T01:05:23.966487987Z [inf]  (Reading database ... 70%
+2025-10-23T01:05:23.978984583Z [inf]  (Reading database ... 75%
+2025-10-23T01:05:23.995192874Z [inf]  (Reading database ... 80%
+2025-10-23T01:05:24.005807149Z [inf]  (Reading database ... 85%
+2025-10-23T01:05:24.016412278Z [inf]  (Reading database ... 90%
+2025-10-23T01:05:24.027495205Z [inf]  (Reading database ... 95%
+2025-10-23T01:05:24.039209422Z [inf]  (Reading database ... 100%(Reading database ... 31574 files and directories currently installed.)
+
+2025-10-23T01:05:24.040428044Z [inf]  Preparing to unpack .../0-libc-ares2_1.18.1-3_amd64.deb ...
+
+2025-10-23T01:05:24.043941229Z [inf]  Unpacking libc-ares2:amd64 (1.18.1-3) ...
+
+2025-10-23T01:05:24.070105921Z [inf]  Selecting previously unselected package node-xtend.
+
+2025-10-23T01:05:24.073301539Z [inf]  Preparing to unpack .../1-node-xtend_4.0.2-3_all.deb ...
+
+2025-10-23T01:05:24.075267091Z [inf]  Unpacking node-xtend (4.0.2-3) ...
+
+2025-10-23T01:05:24.098256131Z [inf]  Selecting previously unselected package nodejs.
+
+2025-10-23T01:05:24.101377806Z [inf]  Preparing to unpack .../2-nodejs_18.20.4+dfsg-1~deb12u1_amd64.deb ...
+
+2025-10-23T01:05:24.103630096Z [inf]  Unpacking nodejs (18.20.4+dfsg-1~deb12u1) ...
+
+2025-10-23T01:05:24.160430173Z [inf]  Selecting previously unselected package node-acorn.
+
+2025-10-23T01:05:24.163116384Z [inf]  Preparing to unpack .../3-node-acorn_8.8.1+ds+~cs25.17.7-2_all.deb ...
+
+2025-10-23T01:05:24.164971492Z [inf]  Unpacking node-acorn (8.8.1+ds+~cs25.17.7-2) ...
+
+2025-10-23T01:05:24.20217143Z [inf]  Selecting previously unselected package node-cjs-module-lexer.
+
+2025-10-23T01:05:24.205070559Z [inf]  Preparing to unpack .../4-node-cjs-module-lexer_1.2.2+dfsg-5_all.deb ...
+
+2025-10-23T01:05:24.207090872Z [inf]  Unpacking node-cjs-module-lexer (1.2.2+dfsg-5) ...
+
+2025-10-23T01:05:24.227422186Z [inf]  Selecting previously unselected package node-busboy.
+
+2025-10-23T01:05:24.230329231Z [inf]  Preparing to unpack .../5-node-busboy_1.6.0+~cs2.6.0-2_all.deb ...
+
+2025-10-23T01:05:24.232236854Z [inf]  Unpacking node-busboy (1.6.0+~cs2.6.0-2) ...
+
+2025-10-23T01:05:24.256794734Z [inf]  Selecting previously unselected package node-undici.
+
+2025-10-23T01:05:24.259325397Z [inf]  Preparing to unpack .../6-node-undici_5.15.0+dfsg1+~cs20.10.9.3-1+deb12u4_all.deb ...
+
+2025-10-23T01:05:24.267144455Z [inf]  Unpacking node-undici (5.15.0+dfsg1+~cs20.10.9.3-1+deb12u4) ...
+
+2025-10-23T01:05:24.30939655Z [inf]  Selecting previously unselected package libnode108:amd64.
+
+2025-10-23T01:05:24.312196929Z [inf]  Preparing to unpack .../7-libnode108_18.20.4+dfsg-1~deb12u1_amd64.deb ...
+
+2025-10-23T01:05:24.314234407Z [inf]  Unpacking libnode108:amd64 (18.20.4+dfsg-1~deb12u1) ...
+
+2025-10-23T01:05:24.836580069Z [inf]  Selecting previously unselected package nodejs-doc.
+
+2025-10-23T01:05:24.840595643Z [inf]  Preparing to unpack .../8-nodejs-doc_18.20.4+dfsg-1~deb12u1_all.deb ...
+
+2025-10-23T01:05:24.842654642Z [inf]  Unpacking nodejs-doc (18.20.4+dfsg-1~deb12u1) ...
+
+2025-10-23T01:05:25.071260516Z [inf]  Setting up node-cjs-module-lexer (1.2.2+dfsg-5) ...
+
+2025-10-23T01:05:25.075578981Z [inf]  Setting up libc-ares2:amd64 (1.18.1-3) ...
+
+2025-10-23T01:05:25.079517759Z [inf]  Setting up nodejs-doc (18.20.4+dfsg-1~deb12u1) ...
+
+2025-10-23T01:05:25.08304974Z [inf]  Setting up node-xtend (4.0.2-3) ...
+
+2025-10-23T01:05:25.086970966Z [inf]  Setting up node-busboy (1.6.0+~cs2.6.0-2) ...
+
+2025-10-23T01:05:25.090387118Z [inf]  Setting up node-undici (5.15.0+dfsg1+~cs20.10.9.3-1+deb12u4) ...
+
+2025-10-23T01:05:25.098764752Z [inf]  Setting up node-acorn (8.8.1+ds+~cs25.17.7-2) ...
+
+2025-10-23T01:05:25.102727666Z [inf]  Setting up libnode108:amd64 (18.20.4+dfsg-1~deb12u1) ...
+
+2025-10-23T01:05:25.106403155Z [inf]  Setting up nodejs (18.20.4+dfsg-1~deb12u1) ...
+
+2025-10-23T01:05:25.115912053Z [inf]  update-alternatives: using /usr/bin/nodejs to provide /usr/bin/js (js) in auto mode
+
+2025-10-23T01:05:25.119165668Z [inf]  Processing triggers for libc-bin (2.36-9+deb12u10) ...
+
+2025-10-23T01:05:25.500275869Z [inf]  install apt packages: nodejs
+2025-10-23T01:05:25.504388733Z [inf]  mkdir /etc/mise
+2025-10-23T01:05:25.535088962Z [inf]  mkdir /etc/mise
+2025-10-23T01:05:25.538230139Z [inf]  create mise config
+2025-10-23T01:05:25.564029566Z [inf]  create mise config
+2025-10-23T01:05:25.566778810Z [inf]  install mise packages: bun
+2025-10-23T01:05:25.762032813Z [inf]  mise bun@1.3.1       install
+
+2025-10-23T01:05:25.76243178Z [inf]  mise bun@1.3.1       download bun-linux-x64-baseline.zip
+
+2025-10-23T01:05:26.304081021Z [inf]  mise bun@1.3.1       extract bun-linux-x64-baseline.zip
+
+2025-10-23T01:05:26.844650541Z [inf]  mise bun@1.3.1       bun -v
+
+2025-10-23T01:05:26.84657327Z [inf]  mise bun@1.3.1       1.3.1
+
+2025-10-23T01:05:26.856863237Z [inf]  mise bun@1.3.1     ✓ installed
+
+2025-10-23T01:05:29.345272609Z [inf]  install mise packages: bun
+2025-10-23T01:05:29.348467186Z [inf]  mkdir -p /app/node_modules/.cache
+2025-10-23T01:05:29.440459408Z [inf]  copy /mise/shims
+2025-10-23T01:05:30.360201465Z [inf]  copy /mise/shims
+2025-10-23T01:05:30.363166971Z [inf]  copy /mise/installs
+2025-10-23T01:05:30.372060192Z [inf]  mkdir -p /app/node_modules/.cache
+2025-10-23T01:05:30.377134994Z [inf]  copy package.json
+2025-10-23T01:05:30.413618191Z [inf]  copy package.json
+2025-10-23T01:05:30.417731809Z [inf]  copy bun.lock
+2025-10-23T01:05:30.459290796Z [inf]  copy bun.lock
+2025-10-23T01:05:30.461966401Z [inf]  bun install --frozen-lockfile
+2025-10-23T01:05:30.490860994Z [inf]  copy /mise/installs
+2025-10-23T01:05:30.493951716Z [inf]  copy /usr/local/bin/mise
+2025-10-23T01:05:30.572076051Z [inf]  copy /usr/local/bin/mise
+2025-10-23T01:05:30.575254182Z [inf]  copy /etc/mise/config.toml
+2025-10-23T01:05:30.600803606Z [inf]  copy /etc/mise/config.toml
+2025-10-23T01:05:30.603634201Z [inf]  copy /root/.local/state/mise
+2025-10-23T01:05:30.614499547Z [inf]  bun install v1.3.1 (89fa0f34)
+
+2025-10-23T01:05:30.629909571Z [inf]  copy /root/.local/state/mise
+2025-10-23T01:05:33.051255279Z [inf]  
++ @tailwindcss/postcss@4.1.12
++ @types/node@24.0.12
++ @types/react@19.0.12
++ @types/react-dom@19.0.4
++ drizzle-kit@0.31.4
++ eslint@9.23.0
++ eslint-config-next@15.5.0
++ postcss@8.5.3
++ prettier-plugin-tailwindcss@0.6.14
++ tailwindcss@4.1.12
++ typescript@5.8.2
++ @hookform/resolvers@5.2.1
++ @radix-ui/react-label@2.1.7
++ @radix-ui/react-radio-group@1.3.8
++ @radix-ui/react-slot@1.2.3
++ better-auth@1.3.7
++ class-variance-authority@0.7.1
++ clsx@2.1.1
++ drizzle-orm@0.44.4
++ drizzle-zod@0.8.3
++ lucide-react@0.541.0
++ next@15.5.0
++ next-themes@0.4.6
++ nextjs-toploader@3.8.16
++ postgres@3.4.7
++ react@19.0.0
++ react-dom@19.0.0
++ react-hook-form@7.62.0
++ sonner@2.0.7
++ tailwind-merge@3.3.1
++ tailwindcss-animate@1.0.7
++ zod@4.0.17
+
+402 packages installed [2.44s]
+
+2025-10-23T01:05:36.201306616Z [inf]  bun install --frozen-lockfile
+2025-10-23T01:05:36.205719577Z [inf]  copy / /app
+2025-10-23T01:05:36.418100770Z [inf]  copy / /app
+2025-10-23T01:05:36.422683714Z [inf]  copy .
+2025-10-23T01:05:36.473566583Z [inf]  copy .
+2025-10-23T01:05:36.478057593Z [inf]  bun install && bun run db:migrate && bun run db:seed && bun run build
+2025-10-23T01:05:37.481995051Z [inf]  bun install v1.3.1 (89fa0f34)
+
+2025-10-23T01:05:37.629727002Z [inf]  
+Checked 406 installs across 515 packages (no changes) [149.00ms]
+
+2025-10-23T01:05:37.650382388Z [inf]  $ drizzle-kit push
+
+2025-10-23T01:05:37.909593179Z [inf]  No config path provided, using default 'drizzle.config.ts'
+
+2025-10-23T01:05:37.910079769Z [inf]  Reading config file '/app/drizzle.config.ts'
+
+2025-10-23T01:05:38.247854453Z [inf]  Using 'postgres' driver for database querying
+
+2025-10-23T01:05:38.345326515Z [inf]  [⣷] Pulling schema from database...
+
+2025-10-23T01:05:38.413501017Z [inf]  [2K[1G[✓] Pulling schema from database...
+
+2025-10-23T01:05:38.424903294Z [inf]  
+
+2025-10-23T01:05:38.425016568Z [inf]   Warning  You are about to execute current statements:
+
+
+2025-10-23T01:05:38.425120891Z [inf]  CREATE TYPE "public"."gender" AS ENUM('male', 'female');
+CREATE TYPE "public"."role" AS ENUM('admin', 'member');
+CREATE TABLE "account" (
+	"id" text PRIMARY KEY NOT NULL,
+	"accountId" text NOT NULL,
+	"providerId" text NOT NULL,
+	"userId" text NOT NULL,
+	"accessToken" text,
+	"refreshToken" text,
+	"idToken" text,
+	"accessTokenExpiresAt" timestamp,
+	"refreshTokenExpiresAt" timestamp,
+	"scope" text,
+	"password" text,
+	"createdAt" timestamp DEFAULT now(),
+	"updatedAt" timestamp DEFAULT now()
+);
+
+CREATE TABLE "session" (
+	"id" text PRIMARY KEY NOT NULL,
+	"expiresAt" timestamp NOT NULL,
+	"token" text NOT NULL,
+	"createdAt" timestamp DEFAULT now(),
+	"updatedAt" timestamp DEFAULT now(),
+	"ipAddress" text,
+	"userAgent" text,
+	"userId" text NOT NULL,
+	CONSTRAINT "session_token_unique" UNIQUE("token")
+);
+
+CREATE TABLE "user" (
+	"id" text PRIMARY KEY NOT NULL,
+	"name" text NOT NULL,
+	"username" text,
+	"display_username" text,
+	"email" text NOT NULL,
+	"emailVerified" boolean NOT NULL,
+	"image" text,
+	"role" "role" DEFAULT 'member' NOT NULL,
+	"gender" "gender",
+	"createdAt" timestamp DEFAULT now(),
+	"updatedAt" timestamp DEFAULT now(),
+	CONSTRAINT "user_username_unique" UNIQUE("username"),
+	CONSTRAINT "user_email_unique" UNIQUE("email")
+);
+
+CREATE TABLE "verification" (
+	"id" text PRIMARY KEY NOT NULL,
+	"identifier" text NOT NULL,
+	"value" text NOT NULL,
+	"expiresAt" timestamp NOT NULL,
+	"createdAt" timestamp DEFAULT now(),
+	"updatedAt" timestamp DEFAULT now()
+);
+
+ALTER TABLE "account" ADD CONSTRAINT "account_userId_user_id_fk" FOREIGN KEY ("userId") REFERENCES "public"."user"("id") ON DELETE no action ON UPDATE no action;
+ALTER TABLE "session" ADD CONSTRAINT "session_userId_user_id_fk" FOREIGN KEY ("userId") REFERENCES "public"."user"("id") ON DELETE no action ON UPDATE no action;
+
+2025-10-23T01:05:38.425275843Z [inf]  
+
+2025-10-23T01:05:38.428031638Z [inf]  [?25l
+2025-10-23T01:05:38.428562344Z [inf]  ❯ No, abort
+  Yes, I want to execute all statements

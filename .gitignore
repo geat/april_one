@@ -11,9 +11,9 @@
 !.yarn/versions
 
 # Lock files (optional - commit if you want reproducible builds)
-# bun.lock
-# yarn.lock
-# package-lock.json
+bun.lock
+yarn.lock
+# Keep package-lock.json for npm builds
 
 # testing
 /coverage

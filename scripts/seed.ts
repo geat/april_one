@@ -2,12 +2,20 @@ import "dotenv/config";
 import { db } from "../src/db";
 import { category, product } from "../src/db/schema";
 import { nanoid } from "nanoid";
+import { sql } from "drizzle-orm";
 
 async function seed() {
   console.log("🌱 Seeding database...");
   console.log("DATABASE_URL:", process.env.DATABASE_URL ? "✓ Loaded" : "✗ Missing");
 
   try {
+    // Check if data already exists
+    const existingCategories = await db.select().from(category).limit(1);
+    if (existingCategories.length > 0) {
+      console.log("⚠️  Database already seeded, skipping...");
+      return;
+    }
+
     // Create categories
     console.log("Creating categories...");
     const categories = await db
