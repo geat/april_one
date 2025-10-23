@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { db } from "../src/db";
-import { category, product } from "../src/db/schema";
+import { category, product, user, account } from "../src/db/schema";
 import { nanoid } from "nanoid";
 import { sql } from "drizzle-orm";
 
@@ -15,6 +15,35 @@ async function seed() {
       console.log("⚠️  Database already seeded, skipping...");
       return;
     }
+
+    // Create admin user with password
+    console.log("Creating admin user...");
+    const bcrypt = await import("bcrypt");
+    const hashedPassword = await bcrypt.hash("admin123", 10);
+
+    const userId = nanoid();
+
+    // Insert user first
+    await db.insert(user).values({
+      id: userId,
+      name: "Admin",
+      username: "admin",
+      displayUsername: "admin",
+      email: "admin@example.com",
+      emailVerified: true,
+      role: "admin",
+    });
+
+    // Insert account with password (Better Auth uses credential provider)
+    await db.insert(account).values({
+      id: nanoid(),
+      accountId: userId,
+      providerId: "credential",
+      userId: userId,
+      password: hashedPassword,
+    });
+
+    console.log(`✓ Created admin user (email: admin@example.com, password: admin123)`);
 
     // Create categories
     console.log("Creating categories...");
