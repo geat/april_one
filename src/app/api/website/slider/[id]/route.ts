@@ -6,13 +6,14 @@ import { eq } from "drizzle-orm";
 // GET single slider
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const [slider] = await db
       .select()
       .from(websiteSlider)
-      .where(eq(websiteSlider.id, parseInt(params.id)));
+      .where(eq(websiteSlider.id, parseInt(id)));
 
     if (!slider) {
       return NextResponse.json({ error: "Slider not found" }, { status: 404 });
@@ -31,9 +32,10 @@ export async function GET(
 // PUT update slider
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const body = await request.json();
 
     const [updatedSlider] = await db
@@ -49,7 +51,7 @@ export async function PUT(
         orderIndex: body.orderIndex,
         updatedAt: new Date(),
       })
-      .where(eq(websiteSlider.id, parseInt(params.id)))
+      .where(eq(websiteSlider.id, parseInt(id)))
       .returning();
 
     if (!updatedSlider) {
@@ -69,12 +71,13 @@ export async function PUT(
 // DELETE slider
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const [deletedSlider] = await db
       .delete(websiteSlider)
-      .where(eq(websiteSlider.id, parseInt(params.id)))
+      .where(eq(websiteSlider.id, parseInt(id)))
       .returning();
 
     if (!deletedSlider) {

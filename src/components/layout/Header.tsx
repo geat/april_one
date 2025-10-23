@@ -93,7 +93,7 @@ export function Header() {
                 {t('myOrders')}
               </Link>
             )}
-            {session?.user?.role === "admin" && (
+            {session?.user && (session.user as { role?: string })?.role === "admin" && (
               <Link href="/admin" className="hover:text-primary transition-colors flex items-center gap-1">
                 <Shield className="h-4 w-4" />
                 {t('admin')}
@@ -143,7 +143,7 @@ export function Header() {
                       My Orders
                     </Link>
                   </DropdownMenuItem>
-                  {session.user.role === "admin" && (
+                  {(session.user as { role?: string })?.role === "admin" && (
                     <DropdownMenuItem asChild>
                       <Link href="/admin" className="cursor-pointer">
                         <Shield className="mr-2 h-4 w-4" />
@@ -207,7 +207,7 @@ export function Header() {
                 My Orders
               </Link>
             )}
-            {session?.user?.role === "admin" && (
+            {session?.user && (session.user as { role?: string })?.role === "admin" && (
               <Link
                 href="/admin"
                 className="block px-4 py-2 hover:bg-accent rounded mx-2 transition-colors"

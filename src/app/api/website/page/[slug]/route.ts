@@ -6,15 +6,16 @@ import { eq, and } from "drizzle-orm";
 // GET page by slug
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
+    const { slug } = await params;
     const [page] = await db
       .select()
       .from(websitePage)
       .where(
         and(
-          eq(websitePage.slug, params.slug),
+          eq(websitePage.slug, slug),
           eq(websitePage.isActive, true)
         )
       );

@@ -1,6 +1,6 @@
 import { HeroSlider } from "@/components/website/HeroSlider";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { ShoppingBag, Truck, Shield, Headphones } from "lucide-react";
 
@@ -46,7 +46,7 @@ export default async function Home() {
                 <Headphones className="h-10 w-10 mb-2 text-primary" />
                 <CardTitle>24/7 Support</CardTitle>
                 <CardDescription>
-                  We're here to help anytime
+                  We&apos;re here to help anytime
                 </CardDescription>
               </CardHeader>
             </Card>

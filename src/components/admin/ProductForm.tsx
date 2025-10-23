@@ -27,11 +27,11 @@ interface ProductFormProps {
   product?: {
     id: string;
     name: string;
-    description?: string;
+    description?: string | null;
     price: string;
-    categoryId?: string;
+    categoryId?: string | null;
     stock: number;
-    imageUrls?: string[];
+    imageUrls?: string[] | null;
     isActive: boolean;
   };
 }

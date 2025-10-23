@@ -50,7 +50,7 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-4">{siteName}</h3>
             <p className="text-sm text-muted-foreground mb-4">
               Your trusted online store for quality products at competitive prices.
-              We're committed to providing the best shopping experience.
+              We&apos;re committed to providing the best shopping experience.
             </p>
             {/* Social Media Links */}
             {mounted && (

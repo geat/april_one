@@ -25,7 +25,8 @@
       "WebFetch(domain:github.com)",
       "Bash(npm info:*)",
       "Bash(npm run db:generate:*)",
-      "Bash(timeout:*)"
+      "Bash(timeout:*)",
+      "Bash(npm cache clean:*)"
     ],
     "deny": [],
     "ask": []

@@ -6,16 +6,17 @@ import { eq } from "drizzle-orm";
 // PUT update setting
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { key: string } }
+  { params }: { params: Promise<{ key: string }> }
 ) {
   try {
+    const { key } = await params;
     const body = await request.json();
 
     // Check if setting exists
     const [existing] = await db
       .select()
       .from(websiteSetting)
-      .where(eq(websiteSetting.key, params.key));
+      .where(eq(websiteSetting.key, key));
 
     if (existing) {
       // Update existing setting
@@ -26,7 +27,7 @@ export async function PUT(
           description: body.description,
           updatedAt: new Date(),
         })
-        .where(eq(websiteSetting.key, params.key))
+        .where(eq(websiteSetting.key, key))
         .returning();
 
       return NextResponse.json(updated);
@@ -35,7 +36,7 @@ export async function PUT(
       const [created] = await db
         .insert(websiteSetting)
         .values({
-          key: params.key,
+          key: key,
           value: body.value,
           description: body.description,
         })
