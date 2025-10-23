@@ -1,11 +1,11 @@
 [phases.setup]
-nixPkgs = ["nodejs"]
+nixPkgs = ['nodejs_20']
 
 [phases.install]
-cmds = ["npm ci"]
+cmds = ['npm ci']
 
 [phases.build]
-cmds = ["npm run db:migrate", "npm run db:seed", "npm run build"]
+cmds = ['npm run build']
 
 [start]
-cmd = "npm run start"
+cmd = 'npm run db:push && npm run db:seed; npm start'
