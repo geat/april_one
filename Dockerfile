@@ -25,9 +25,6 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 ENV LIGHTNINGCSS_VERSION=1.29.1
 
-# Generate Prisma/Drizzle client (if needed)
-# RUN npm run db:generate
-
 # Build Next.js application
 RUN npm run build
 
@@ -56,7 +53,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY --from=builder /app/drizzle ./drizzle
 COPY --from=builder /app/drizzle.config.ts ./drizzle.config.ts
 COPY --from=builder /app/scripts ./scripts
-COPY --from=builder /app/src/lib/db ./src/lib/db
+COPY --from=builder /app/src/db ./src/db
+COPY --from=builder /app/package.json ./package.json
 
 # Copy entrypoint script
 COPY docker-entrypoint.sh /usr/local/bin/
